@@ -1,4 +1,3 @@
-// Theme Toggle
 const themeToggle = document.getElementById("theme-toggle");
 const currentTheme = localStorage.getItem("theme");
 
@@ -18,7 +17,6 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", theme);
 });
 
-// Back to Top
 const backToTop = document.getElementById("back-to-top");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 500) {
@@ -31,7 +29,6 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Cursor
 const cursor = document.getElementById("cursor");
 const ring = document.getElementById("cursor-ring");
 document.addEventListener("mousemove", (e) => {
@@ -47,13 +44,11 @@ document
     el.addEventListener("mouseleave", () => ring.classList.remove("expand"));
   });
 
-// Nav scroll
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 40);
 });
 
-// Hamburger
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
 hamburger.addEventListener("click", () => {
@@ -67,7 +62,6 @@ document.querySelectorAll(".mobile-link").forEach((link) => {
   });
 });
 
-// Scroll Reveal
 const revealEls = document.querySelectorAll(".reveal");
 const observer = new IntersectionObserver(
   (entries) => {
@@ -85,7 +79,6 @@ const observer = new IntersectionObserver(
 );
 revealEls.forEach((el) => observer.observe(el));
 
-// Also trigger skill bars when skill section comes into view
 document.querySelectorAll(".skill-bar-fill").forEach((bar) => {
   const parentObserver = new IntersectionObserver(
     (entries) => {
@@ -98,7 +91,6 @@ document.querySelectorAll(".skill-bar-fill").forEach((bar) => {
   parentObserver.observe(bar.closest(".skill-category"));
 });
 
-// Active nav link
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
 window.addEventListener("scroll", () => {

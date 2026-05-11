@@ -55,7 +55,6 @@ body {
   cursor: none;
 }
 
-/* Custom Cursor */
 .cursor {
   width: 8px;
   height: 8px;
@@ -88,7 +87,6 @@ body {
   opacity: 0.2;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -99,7 +97,6 @@ body {
   background: var(--accent);
 }
 
-/* Layout */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -109,7 +106,6 @@ section {
   padding: 7rem 0;
 }
 
-/* NAV */
 nav {
   position: fixed;
   top: 0;
@@ -208,7 +204,6 @@ nav.scrolled {
   width: 100%;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -232,7 +227,6 @@ nav.scrolled {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Mobile Menu */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -262,7 +256,6 @@ nav.scrolled {
   color: var(--accent);
 }
 
-/* HERO */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -443,7 +436,6 @@ nav.scrolled {
   animation: scrollLine 2s 1.5s infinite;
 }
 
-/* SECTION HEADERS */
 .section-header {
   margin-bottom: 4rem;
 }
@@ -478,7 +470,6 @@ nav.scrolled {
   color: var(--accent);
 }
 
-/* ABOUT */
 #about {
   background: var(--off-white);
 }
@@ -596,7 +587,6 @@ nav.scrolled {
   text-decoration: underline;
 }
 
-/* SKILLS */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -691,7 +681,6 @@ nav.scrolled {
   transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* EXPERIENCE */
 #experience {
   background: var(--off-white);
 }
@@ -787,7 +776,6 @@ nav.scrolled {
   top: 0.3em;
 }
 
-/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -887,7 +875,6 @@ nav.scrolled {
   transform: translate(2px, -2px);
 }
 
-/* EDUCATION */
 #education {
   background: var(--off-white);
 }
@@ -990,7 +977,6 @@ nav.scrolled {
   line-height: 1.5;
 }
 
-/* CONTACT */
 #contact {
   background: var(--ink);
   color: var(--cream);
@@ -1131,7 +1117,6 @@ nav.scrolled {
   color: var(--cream);
 }
 
-/* FOOTER */
 footer {
   background: var(--ink);
   border-top: 1px solid rgba(250, 248, 244, 0.1);
@@ -1143,7 +1128,6 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* SCROLL REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -1168,7 +1152,6 @@ footer {
   transition-delay: 0.4s;
 }
 
-/* Back to Top */
 #back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -1198,7 +1181,6 @@ footer {
   transform: translateY(-5px);
 }
 
-/* ANIMATIONS */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -1218,7 +1200,6 @@ footer {
   }
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .about-grid,
   .contact-grid,
