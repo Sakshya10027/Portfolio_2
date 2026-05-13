@@ -1,18 +1,18 @@
 const themeToggle = document.getElementById("theme-toggle");
-const currentTheme = localStorage.getItem("theme");
+const currentTheme = localStorage.getItem("theme") || "dark";
 
-if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
+if (currentTheme === "light") {
+  document.documentElement.setAttribute("data-theme", "light");
 }
 
 themeToggle.addEventListener("click", () => {
   let theme = document.documentElement.getAttribute("data-theme");
-  if (theme === "dark") {
-    theme = "light";
+  if (theme === "light") {
+    theme = "dark";
     document.documentElement.removeAttribute("data-theme");
   } else {
-    theme = "dark";
-    document.documentElement.setAttribute("data-theme", "dark");
+    theme = "light";
+    document.documentElement.setAttribute("data-theme", "light");
   }
   localStorage.setItem("theme", theme);
 });
