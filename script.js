@@ -91,6 +91,55 @@ document.querySelectorAll(".skill-bar-fill").forEach((bar) => {
   parentObserver.observe(bar.closest(".skill-category"));
 });
 
+// Robust Audio Context approach for meme sounds
+const memeSounds = [
+  "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+  "https://www.myinstants.com/media/sounds/discord-notification.mp3",
+  "https://www.myinstants.com/media/sounds/error_CD7sEq4.mp3",
+];
+
+// Pre-create Audio objects
+const audioPool = memeSounds.map((src) => {
+  const audio = new Audio(src);
+  audio.preload = "auto";
+  return audio;
+});
+
+document.querySelectorAll(".skill-pill").forEach((pill) => {
+  pill.addEventListener("click", () => {
+    // Pick a random sound from the pool
+    const randomIndex = Math.floor(Math.random() * audioPool.length);
+    const sound = audioPool[randomIndex];
+
+    // Clone and play to allow rapid clicks
+    const playInstance = sound.cloneNode();
+    playInstance.volume = 0.5;
+
+    const playPromise = playInstance.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((error) => {
+        console.warn(
+          "Audio playback failed. Please interact with the page first.",
+          error,
+        );
+      });
+    }
+
+    // Enhanced visual feedback
+    pill.style.backgroundColor = "var(--accent)";
+    pill.style.color = "white";
+    pill.style.transform = "scale(0.9) rotate(3deg)";
+    pill.style.boxShadow = "0 0 15px var(--accent)";
+
+    setTimeout(() => {
+      pill.style.backgroundColor = "";
+      pill.style.color = "";
+      pill.style.transform = "";
+      pill.style.boxShadow = "";
+    }, 200);
+  });
+});
+
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
 window.addEventListener("scroll", () => {

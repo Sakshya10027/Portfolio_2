@@ -653,6 +653,8 @@ nav.scrolled {
   font-weight: 400;
   transition: all 0.25s;
   letter-spacing: 0.02em;
+  cursor: pointer;
+  user-select: none;
 }
 .skill-pill:hover {
   background: var(--accent);
