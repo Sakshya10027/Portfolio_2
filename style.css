@@ -43,6 +43,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  overflow-x: hidden;
 }
 
 body {
@@ -202,6 +203,16 @@ nav.scrolled {
 }
 .nav-links a:hover::after {
   width: 100%;
+}
+.nav-resume {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+.nav-resume::after {
+  display: none !important;
+}
+.nav-resume:hover {
+  opacity: 0.8;
 }
 
 .hamburger {
@@ -875,6 +886,71 @@ nav.scrolled {
   transform: translate(2px, -2px);
 }
 
+#certifications {
+  background: var(--cream);
+}
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cert-card:hover {
+  border-color: var(--accent);
+  background: var(--cream);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.cert-icon {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sand);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.cert-card:hover .cert-icon {
+  background: var(--accent-pale);
+  border-color: var(--accent-light);
+}
+.cert-info {
+  flex: 1;
+}
+.cert-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.cert-issuer {
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.cert-arrow {
+  font-size: 1.2rem;
+  color: var(--border);
+  transition: all 0.3s ease;
+}
+.cert-card:hover .cert-arrow {
+  color: var(--accent);
+  transform: translateX(5px);
+}
+
 #education {
   background: var(--off-white);
 }
@@ -1200,6 +1276,16 @@ footer {
   }
 }
 
+@media (max-width: 1024px) {
+  .about-grid,
+  .contact-grid {
+    gap: 4rem;
+  }
+  .section-title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+}
+
 @media (max-width: 900px) {
   .about-grid,
   .contact-grid,
@@ -1212,6 +1298,8 @@ footer {
   }
   .education-card {
     grid-template-columns: auto 1fr;
+    padding: 2rem;
+    gap: 2rem;
   }
   .edu-cgpa,
   .edu-cgpa-label {
@@ -1220,7 +1308,11 @@ footer {
   .extra-cards {
     grid-template-columns: 1fr;
   }
+  .hero-name {
+    font-size: clamp(3.5rem, 12vw, 6rem);
+  }
 }
+
 @media (max-width: 680px) {
   body {
     cursor: auto;
@@ -1239,15 +1331,66 @@ footer {
     grid-template-columns: 1fr;
   }
   section {
-    padding: 5rem 0;
+    padding: 4rem 0;
+  }
+  .container {
+    padding: 0 1.5rem;
   }
   .about-stats {
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
   .education-card {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
   .edu-icon {
     display: none;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-tagline {
+    margin: 1.5rem 0 2rem;
+  }
+  .contact-big-text {
+    font-size: 3rem;
+  }
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-grid-lines {
+    background-size: 40px 40px;
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .timeline-role {
+    font-size: 1.5rem;
+  }
+  .project-name {
+    font-size: 1.5rem;
+  }
+  .hero-name {
+    font-size: 3rem;
+  }
+  .contact-big-text {
+    font-size: 2.5rem;
+  }
+  .nav-logo {
+    font-size: 1.2rem;
   }
 }
